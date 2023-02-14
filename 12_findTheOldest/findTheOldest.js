@@ -1,28 +1,16 @@
 const findTheOldest = function(people) {
-    let birth, death, oldest, oldestPerson;
-    let previous = 0;
+    let oldest = 0;
+    let oldestPerson;
 
-    for (let person of people) {
-        birth = person.yearOfBirth;
-        if (person.yearOfDeath == undefined) {
-            death = 2023;
-        }
-        else {
-            death = person.yearOfDeath;
-        }
-        nom = person.name;
-        oldest = death - birth;
-        if (oldest > previous) {
-            oldest = oldest;
-            oldestPerson = nom;
-        }
-        previous = oldest;
-    }
-    for (let b of people) {
-        if (b.name == oldestPerson) {
-            return b;
+    for (let {yearOfBirth, yearOfDeath, name} of people) {
+        let death = yearOfDeath ? yearOfDeath : 2023;
+        let age = death - yearOfBirth;
+        if (age > oldest) {
+            oldest = age;
+            oldestPerson = name;
         }
     }
+    return people.find(person=> person.name === oldestPerson);
 };
 
 // Do not edit below this line
