@@ -13,7 +13,7 @@ const findTheOldest = function(people) {
         nom = person.name;
         oldest = death - birth;
         if (oldest > previous) {
-            oldest = previous;
+            oldest = oldest;
             oldestPerson = nom;
         }
         previous = oldest;
