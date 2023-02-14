@@ -24,8 +24,12 @@ const multiply = function(array) {
   return result;
 };
 
-const power = function() {
-	
+const power = function(x, y) {
+  let result = 1;
+  for (let i = 0; i < y; i++) {
+    result *= x;
+  }
+  return result;
 };
 
 const factorial = function() {
